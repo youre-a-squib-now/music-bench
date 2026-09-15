@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace musictheory_v0_3_2
+namespace MusicBench
 {
     /// <summary>
     /// Interaction logic for App.xaml

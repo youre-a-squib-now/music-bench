@@ -28,12 +28,12 @@ using System.Numerics;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace musictheory_v0_3_2
+namespace MusicBench
 {
     public static class P //params
     {
         public static bool globalPhase = true; //wave phase is calculated based on global time instead of time since keypress, preventing identical sines from canceling out
-        public static bool tuneToEdo = true; //read the name. Note that being false does not prevent edo-related calculations, it just means the pitch itself is left alone.
+        public static bool tuneToEdo = false; //read the name. Note that being false does not prevent edo-related calculations, it just means the pitch itself is left alone.
         public static int sampleRate = 44100;
         public static double volume = 0.05; //0.05 is around normal i think?
     }
@@ -44,10 +44,10 @@ namespace musictheory_v0_3_2
         public (double x, double y) intervals; //in nataves
         public (double x, double y) chromas;
 
-        public double[] basis = [4 / 3.0, 3 / 2.0]; //be careful of integer division (5/4 is 1, not 1.25)
-        public (int x, int y)[] basisPos = [(2, 1), (-1, 3)];
-        public (int x, int y) colorStep = (1, 1);
-        public double desiredEdo = 84; //positive integers only
+        public double[] basis = [5, 7]; //be careful of integer division (5/4 is 1, not 1.25)
+        public (int x, int y)[] basisPos = [(2,4), (4,4)];
+        public (int x, int y) colorStep = (0, 1);
+        public double desiredEdo = 1; //positive integers only
 
         //chromas technically still work but i would leave this alone for now
         public int[] basisChromas = [0, 0]; //[0,0] gives isomorphic
